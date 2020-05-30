@@ -81,20 +81,12 @@ class MyProfileController extends Controller
             (isset($input['photo_background'])) ? $namaBackground = str_random().'.'.$input['photo_background']->getClientOriginalExtension() : $namaBackground = null;
             
             MyBio::create([
-                'street' => $input['street'],
-                'address' => $input['address'],
-                'handphone' => $input['handphone'],
+                'study' => $input['study'],
+                'hobby' => $input['hobby'],
                 'photo_profile' => $namaProfile,
                 'photo_background' => $namaBackground,
-                'name' => $input['name'],
-                'born' => $input['born'],
-                'status' => $input['status'],
-                'work_at' => $input['work_at'],
                 'ig' => $input['ig'],
-                'in' => $input['in'],
-                'fb' => $input['fb'],
-                'twitter' => $input['twitter'],
-                'github' => $input['github']
+                'twitter' => $input['twitter']
             ]);
 
             (isset($input['photo_profile'])) ? $input['photo_profile']->move(public_path('mybio'), $namaProfile) : null ;
@@ -135,21 +127,13 @@ class MyProfileController extends Controller
             }
             
             $myBio->update([
-                'street' => $input['street'],
-                'address' => $input['address'],
-                'handphone' => $input['handphone'],
-                'name' => $input['name'],
-                'born' => $input['born'],
-                'status' => $input['status'],
-                'work_at' => $input['work_at'],
+                'study' => $input['study'],
+                'hobby' => $input['hobby'],
                 'ig' => $input['ig'],
-                'in' => $input['in'],
-                'fb' => $input['fb'],
-                'twitter' => $input['twitter'],
-                'github' => $input['github']
+                'twitter' => $input['twitter']
             ]);
 
-            dd($myBio);
+            return redirect('admin/my-profile');
         }
     }
 

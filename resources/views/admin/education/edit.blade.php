@@ -14,20 +14,20 @@
                     </h1>
                 </div>
                 <div class="body">
-                    <form action="{{ url('admin/education/'.$education->id) }}" id="willSubmit" method="POST">
+                    <form action="{{ url('admin/education/'.$education->id) }}" id="willSubmit" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         {{ method_field('put') }}
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" name="study" class="form-control" form="willSubmit" value="{{ $education->study }}">
-                                <label class="form-label">Nama Jurusan</label>
+                                <input type="text" name="name" class="form-control" form="willSubmit" value="{{ $education->name }}">
+                                <label class="form-label">Nama Pendidikan</label>
                             </div>
                         </div>
 
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" name="university" class="form-control" form="willSubmit" value="{{ $education->university }}">
-                                <label class="form-label">Nama Universitas</label>
+                                <input type="text" name="address" class="form-control" form="willSubmit" value="{{ $education->address }}">
+                                <label class="form-label">Address</label>
                             </div>
                         </div>    
                         
@@ -51,6 +51,16 @@
                                 <textarea name="description" class="my-editor" form="willSubmit" rows="20">{{ $education->description }}</textarea>
                             </div>
                         </div>             
+
+                        <div class="form-group">
+                            <label>Thumbnail</label>
+                            @if(isset($education->thumbnail))
+                                <br>
+                                <img class="img-responsive" style="max-width: 30vw; max-height: 30vh;" src="{{ url('education/'.$education->thumbnail) }}">
+                            @endif
+                            <input type="file" name="thumbnail" class="form-control" form="willSubmit" value="">
+                        </div>
+
                         <button type="submit" class="btn btn-primary m-t-15 waves-effect">Update</button>
                     
                     </form>

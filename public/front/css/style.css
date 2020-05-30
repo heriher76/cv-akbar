@@ -1,0 +1,10 @@
+section{
+	min-height: 420px;
+}
+.container text-center{
+	border-radius: 50%;
+}
+
+.card-body{
+	height: 200px;
+}

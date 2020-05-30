@@ -17,9 +17,17 @@
                     <!-- <form action="{{ url('admin/my-profile') }}" id="myForm" class="willSubmit" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         {{ method_field('put') }} -->
+                        <label>Paragraf One</label>
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <textarea name="description" class="my-editor" form="willSubmit" rows="20">{{ $myAbout->description }}</textarea>
+                                <textarea name="paragraf_one" class="my-editor" form="willSubmit" rows="20">{{ $myAbout->paragraf_one }}</textarea>
+                            </div>
+                        </div>
+                        
+                        <label>Paragraf Two</label>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <textarea name="paragraf_two" class="my-editor" form="willSubmit" rows="20">{{ $myAbout->paragraf_two }}</textarea>
                             </div>
                         </div>
 
@@ -33,31 +41,6 @@
               		<form action="{{ url('admin/about-me') }}" id="willSubmit" method="POST" enctype="multipart/form-data">
               			{{ csrf_field() }}
                     	{{ method_field('put') }}
-                    	<p>Fokus Programming</p>
-	              		<div class="form-group form-float">	
-	              			<div class="form-line">
-	              				<input type="text" name="focus1" class="form-control" value="{{ $myAbout->focus1 }}">
-	              				<label class="form-label">Fokus 1</label>
-	              			</div>
-	              		</div>
-	              		<div class="form-group form-float">	
-	              			<div class="form-line">
-	              				<input type="text" name="focus2" class="form-control" value="{{ $myAbout->focus2 }}">
-	              				<label class="form-label">Fokus 2</label>
-	              			</div>
-	              		</div>
-	              		<div class="form-group form-float">	
-	              			<div class="form-line">
-	              				<input type="text" name="focus3" class="form-control" value="{{ $myAbout->focus3 }}">
-	              				<label class="form-label">Fokus 3</label>
-	              			</div>
-	              		</div>
-	              		<div class="form-group form-float">	
-	              			<div class="form-line">
-	              				<input type="text" name="focus4" class="form-control" value="{{ $myAbout->focus4 }}">
-	              				<label class="form-label">Fokus 4</label>
-	              			</div>
-	              		</div>
                     
 	                    <button type="submit" class="btn btn-primary m-t-15 waves-effect">Update</button>
               		</form>

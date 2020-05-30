@@ -15,20 +15,12 @@ class CreateMybioTable extends Migration
     {
         Schema::create('mybio', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('street')->nullable();
-            $table->string('address')->nullable();
-            $table->string('handphone')->nullable();
             $table->string('photo_profile')->nullable();
             $table->string('photo_background')->nullable();
-            $table->string('name')->nullable();
-            $table->string('born')->nullable();
-            $table->string('status')->nullable();
-            $table->string('work_at')->nullable();
+            $table->string('study')->nullable();
+            $table->string('hobby')->nullable();
             $table->string('ig')->nullable();
-            $table->string('in')->nullable();
-            $table->string('fb')->nullable();
             $table->string('twitter')->nullable();
-            $table->string('github')->nullable();
             $table->timestamps();
         });
     }

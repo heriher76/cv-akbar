@@ -15,11 +15,8 @@ class CreateAboutmeTable extends Migration
     {
         Schema::create('aboutme', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('description')->nullable();
-            $table->string('focus1')->nullable();
-            $table->string('focus2')->nullable();
-            $table->string('focus3')->nullable();
-            $table->string('focus4')->nullable();
+            $table->longText('paragraf_one')->nullable();
+            $table->longText('paragraf_two')->nullable();
             $table->timestamps();
         });
     }

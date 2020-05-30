@@ -21,17 +21,19 @@
                         <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                             <thead>
                                 <tr>
-                                    <th>Study</th>
-                                    <th>University</th>
-                                    <th>Waktu</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Thumbnail</th>
+                                    <th>Periode</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                             	@foreach($educations as $education)
                                 <tr>
-                                    <td>{{ $education->study }}</td>
-                                    <td>{{ $education->university }}</td>
+                                    <td>{{ $education->name }}</td>
+                                    <td>{{ $education->address }}</td>
+                                    <td>{{ $education->thumbnail }}</td>
                                     <td>{{ $education->from }} || {{ $education->until }}</td>
                                     <td>
                                         <a href="{{ url('admin/education/'.$education->id.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>

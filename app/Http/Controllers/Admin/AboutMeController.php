@@ -77,25 +77,19 @@ class AboutMeController extends Controller
         if(AboutMe::first() == null) {
             
             AboutMe::create([
-                'description' => $input['description'],
-                'focus1' => $input['focus1'],
-                'focus2' => $input['focus2'],
-                'focus3' => $input['focus3'],
-                'focus4' => $input['focus4']
+                'paragraf_one' => $input['paragraf_one'],
+                'paragraf_two' => $input['paragraf_two']
             ]);
 
         }else{
             $myAbout = AboutMe::first();
 
             $myAbout->update([
-                'description' => $input['description'],
-                'focus1' => $input['focus1'],
-                'focus2' => $input['focus2'],
-                'focus3' => $input['focus3'],
-                'focus4' => $input['focus4']
+                'paragraf_one' => $input['paragraf_one'],
+                'paragraf_two' => $input['paragraf_two']
             ]);
         }
-        return redirect('admin');
+        return redirect('admin/about-me');
     }
 
     /**

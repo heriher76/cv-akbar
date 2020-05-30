@@ -33,7 +33,7 @@
                                     <td>{{ $gallery->saved_at }}</td>
                                     <td>{{ $gallery->created_at }}</td>
                                     <td>
-                                        <form action="{{ url('admin/galleries/'.$gallery->id) }}" method="POST" style="display: inline;">
+                                        <form action="{{ url('admin/gallery/'.$gallery->id) }}" method="POST" style="display: inline;">
                                             {{ csrf_field() }}
                                             {{ method_field('delete') }}
                                             <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Ingin Menghapus Photo Ini ?');">Delete</button>

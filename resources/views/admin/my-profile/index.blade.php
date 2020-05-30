@@ -15,57 +15,15 @@
                         {{ method_field('put') }} -->
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" name="name" class="form-control" form="willSubmit" value="{{ $myBio->name }}">
-                                <label class="form-label">Nama</label>
+                                <input type="text" name="study" class="form-control" form="willSubmit" value="{{ $myBio->study }}">
+                                <label class="form-label">Study</label>
                             </div>
                         </div>
 
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" name="born" class="form-control" form="willSubmit" value="{{ $myBio->born }}">
-                                <label class="form-label">Tanggal Lahir</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="text" name="status" class="form-control" form="willSubmit" value="{{ $myBio->status }}">
-                                <label class="form-label">Status</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="text" name="work_at" class="form-control" form="willSubmit" value="{{ $myBio->work_at }}">
-                                <label class="form-label">Pekerjaan</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="text" name="street" class="form-control" form="willSubmit" value="{{ $myBio->street }}">
-                                <label class="form-label">Nama Jalan ex: Jalan Dukuh RT03</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="text" name="address" class="form-control" form="willSubmit" value="{{ $myBio->address }}">
-                                <label class="form-label">Alamat ex: Kecamatan Cimareme</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="text" name="email" class="form-control" form="willSubmit" value="{{ $myBio->email }}">
-                                <label class="form-label">Email</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group form-float">
-                            <div class="form-line">
-                                <input type="text" name="handphone" class="form-control" form="willSubmit" value="{{ $myBio->handphone }}">
-                                <label class="form-label">Handphone</label>
+                                <input type="text" name="hobby" class="form-control" form="willSubmit" value="{{ $myBio->hobby }}">
+                                <label class="form-label">Hobby</label>
                             </div>
                         </div>
                         
@@ -102,30 +60,14 @@
 	              				<label class="form-label">Instagram</label>
 	              			</div>
 	              		</div>
-                    <div class="form-group form-float"> 
-                      <div class="form-line">
-                        <input type="text" name="fb" class="form-control" value="{{ $myBio->fb }}">
-                        <label class="form-label">Facebook</label>
-                      </div>
-                    </div>
-                    <div class="form-group form-float"> 
-                      <div class="form-line">
-                        <input type="text" name="in" class="form-control" value="{{ $myBio->in }}">
-                        <label class="form-label">Linked In</label>
-                      </div>
-                    </div>
+                    
                     <div class="form-group form-float"> 
                       <div class="form-line">
                         <input type="text" name="twitter" class="form-control" value="{{ $myBio->twitter }}">
                         <label class="form-label">Twitter</label>
                       </div>
                     </div>
-                    <div class="form-group form-float"> 
-                      <div class="form-line">
-                        <input type="text" name="github" class="form-control" value="{{ $myBio->github }}">
-                        <label class="form-label">Github</label>
-                      </div>
-                    </div>
+                    
 	                    <button type="submit" class="btn btn-primary m-t-15 waves-effect">Update</button>
               		</form>
                 </div>

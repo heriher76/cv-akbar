@@ -40,9 +40,20 @@ class EducationController extends Controller
     {
         $input = $request->all();
 
-        Education::create($input);
+        (isset($input['thumbnail'])) ? $namaThumbnail = str_random().'.'.$input['thumbnail']->getClientOriginalExtension() : $namaThumbnail = null;
+        
+        Education::create([
+            'name' => $input['name'],
+            'address' => $input['address'],
+            'from' => $input['from'],
+            'until' => $input['until'],
+            'description' => $input['description'],
+            'thumbnail' => $namaThumbnail
+        ]);
 
-        return back();
+        (isset($input['thumbnail'])) ? $input['thumbnail']->move(public_path('education'), $namaThumbnail) : null ;
+
+        return redirect('admin/education');
     }
 
     /**
@@ -82,9 +93,20 @@ class EducationController extends Controller
 
         $education = Education::where('id', $id)->first();
 
-        $education->update($input);
+        (isset($input['thumbnail'])) ? $namaThumbnail = str_random().'.'.$input['thumbnail']->getClientOriginalExtension() : $namaThumbnail = null;
 
-        return back();
+        $education->update([
+            'name' => $input['name'],
+            'address' => $input['address'],
+            'from' => $input['from'],
+            'until' => $input['until'],
+            'description' => $input['description'],
+            'thumbnail' => $namaThumbnail
+        ]);
+
+        (isset($input['thumbnail'])) ? $input['thumbnail']->move(public_path('education'), $namaThumbnail) : null ;
+        
+        return redirect('admin/education');
     }
 
     /**

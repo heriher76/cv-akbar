@@ -14,20 +14,20 @@
                     </h1>
                 </div>
                 <div class="body">
-                    <form action="{{ url('admin/education') }}" id="willSubmit" method="POST">
+                    <form action="{{ url('admin/education') }}" id="willSubmit" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" name="study" class="form-control" form="willSubmit" value="">
-                                <label class="form-label">Nama Jurusan</label>
+                                <input type="text" name="name" class="form-control" form="willSubmit" value="">
+                                <label class="form-label">Nama Pendidikan</label>
                             </div>
                         </div>
 
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" name="university" class="form-control" form="willSubmit" value="">
-                                <label class="form-label">Nama Universitas</label>
+                                <input type="text" name="address" class="form-control" form="willSubmit" value="">
+                                <label class="form-label">Address</label>
                             </div>
                         </div>    
                         
@@ -49,6 +49,13 @@
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <textarea name="description" class="my-editor" form="willSubmit" rows="20"></textarea>
+                            </div>
+                        </div>             
+
+                        <label>Thumbnail</label>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input type="file" name="thumbnail" >
                             </div>
                         </div>             
                         <button type="submit" class="btn btn-primary m-t-15 waves-effect">Create</button>

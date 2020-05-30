@@ -49,7 +49,7 @@ class GalleryController extends Controller
 
         (isset($input['name'])) ? $input['name']->move(public_path('gallery'), $namaPhoto) : null;
 
-        return back();
+        return redirect('admin/gallery');
     }
 
     /**

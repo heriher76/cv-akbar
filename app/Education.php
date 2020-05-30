@@ -8,5 +8,5 @@ class Education extends Model
 {
 	protected $table = 'educations';
 	
-    protected $fillable = ['study', 'university', 'from', 'until', 'description'];
+    protected $fillable = ['name', 'address', 'thumbnail', 'from', 'until', 'description'];
 }

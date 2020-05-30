@@ -15,6 +15,8 @@ Route::get('/', 'PagesController@index');
 
 Auth::routes();
 
+Route::post('/send-message', 'Admin\MessageController@store');
+
 // Group Auth middleware
 Route::group(["middleware" => "auth", "prefix" => "admin"], function(){
 	Route::get('/', 'AdminPagesController@dashboard');
@@ -25,10 +27,16 @@ Route::group(["middleware" => "auth", "prefix" => "admin"], function(){
 	Route::get('/about-me', 'Admin\AboutMeController@index');
 	Route::put('/about-me', 'Admin\AboutMeController@update');
 
-	Route::get('/quotes', 'Admin\QuotesController@index');
-	Route::put('/quotes', 'Admin\QuotesController@update');
+	Route::get('/address', 'Admin\AddressController@index');
+	Route::put('/address', 'Admin\AddressController@update');
 
-	Route::resource('/experience', 'Admin\ExperienceController');
+	Route::get('/message', 'Admin\MessageController@index');
+
+	Route::delete('/message/{id}', 'Admin\MessageController@destroy');
+
+	Route::resource('/portfolio', 'Admin\PortfolioController');
+
+	Route::resource('/skill', 'Admin\SkillController');
 
 	Route::resource('/education', 'Admin\EducationController');
 
